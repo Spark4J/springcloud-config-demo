@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+    
+---
+server: 
+  port: 9301
+spring:
+  profiles: dev #开发环境
+  application:
+    name: springcloud-config-client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@eureka-8701:8701/eureka/ #声明服务注册中心的地址 
+  instance:
+    instance-id: springcloud-config-client-dev-9301 #超链接显示为实例名 而不是 主机名:应用名:端口
+    prefer-ip-address: true     #访问路径可以显示IP地址而不是主机名
+
+---
+server: 
+  port: 9302
+spring:
+  profiles: test #开发环境
+  application:
+    name: springcloud-config-client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@eureka-8701:8701/eureka/ #声明服务注册中心的地址 
+  instance:
+    instance-id: springcloud-config-client-test-9302 #超链接显示为实例名 而不是 主机名:应用名:端口
+    prefer-ip-address: true     #访问路径可以显示IP地址而不是主机名
