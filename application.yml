@@ -8,7 +8,7 @@ spring:
   application:
     name: springcloud-config-dev
 name: Tom
-age: 18
+age: 19
       
 ---
 spring:
